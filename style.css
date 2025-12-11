@@ -1,0 +1,407 @@
+
+    /* layout wrapper so nav stays centered while button sits top-right */
+   html, body {
+  height: 100%;
+}
+    header{
+      width: 100%;
+      padding: 20px 40px;
+      box-sizing: border-box;
+      position: relative;
+      display: flex;
+      justify-content: center; /* centers the nav */
+      align-items: flex-start;
+        min-height: 190px;
+    }
+    .logo{
+      position: absolute;
+      left: 20px;
+      top: -10px;
+      height: 150px; /* at least 150px high */
+      width: auto;
+      object-fit: contain;
+      display: block;
+      z-index: 20;
+    }
+
+    /* renamed nav div to .nav to avoid styling all divs */
+    .nav{
+      text-align: center;
+      margin: 0 auto;
+      border: 3px solid rgba(15, 15, 15,0);
+      border-radius: 40px;
+      height: 70px;
+      width: 400px;
+      color: rgb(108, 108, 108);
+      font-family: sans-serif;
+      font-weight: 300;
+      transition: all 500ms ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      background: transparent;
+    }
+
+    .nav:hover{
+      border: 3px solid rgb(221, 221, 221);
+      border-radius: 50px;
+     box-shadow:  0 0 8px 4px rgba(173,235,179,0.45),
+    0 0 20px 8px rgba(173,235,179,0.30),
+    0 0 48px 16px rgba(173,235,179,0.18),
+    0 6px 20px rgba(0,0,0,0.35);
+    }
+
+    a{
+      cursor: pointer;
+    }
+    a:hover{
+      color: rgb(173,235,179);   
+    }
+
+    /* button sits at the top-right of the header */
+    .cta{
+      position: absolute;
+      right: 60px;
+      top: 35px;
+      border: none;
+      background-color: rgb(41, 41, 41);
+      color: rgb(255, 255, 255);
+      height: 40px;
+      width: 100px;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: 500ms;
+      z-index: 10;
+    }
+     a, a:link, a:visited {
+      color: rgb(108, 108, 108);
+      text-decoration: none;
+    }
+    a:hover, a:active {
+      color: rgb(173, 235, 179);
+      text-decoration: none;
+    }
+    a:focus {
+      outline: 3px solid rgba(173,235,179,0.25);
+      outline-offset: 4px;
+    }
+
+    footer{
+  text-align: center;
+  gap: 40px;
+  font-family: sans-serif;
+  margin-top: auto;
+  padding: 20px 0;
+}
+  
+    .fut{
+      color: rgb(91, 91, 91);
+    }
+
+    .cta:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(41, 41, 41);
+  /* layered glow */
+  box-shadow:
+    0 0 8px 4px rgba(173,235,179,0.45),
+    0 0 20px 8px rgba(173,235,179,0.30),
+    0 0 48px 16px rgba(173,235,179,0.18),
+    0 6px 20px rgba(0,0,0,0.35);
+  transform: translateY(-2px);
+}
+
+   body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(to right, rgb(15,15,15), rgb(22, 26, 22));
+  margin: 0;
+}
+
+    .abt{
+    color: white;
+    font-family: sans-serif;
+    /* no absolute positioning anymore */
+    align-self: center;
+}
+  
+  .dev{
+    height: 240px;
+    border-radius: 50px;
+    /* no absolute positioning anymore */
+    object-fit: cover;
+}
+
+    .aboutme {
+    height: 320px;
+    width: 520px;
+    background: linear-gradient(to right, rgba(73, 73, 73, 0.1), rgba(173, 173, 173, 0.1));
+    border-radius: 50px;
+    margin: 40px auto;
+    display: flex;
+    gap: 24px;
+    padding: 28px;
+    box-sizing: border-box;
+
+    /* add transition HERE (the default state) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 50px;
+    margin-top: -30px;
+    border: 0.5px solid rgb(75, 75, 75);
+}
+
+    .aboutme:hover {
+    border-color: rgb(164, 187, 167);
+
+    transform: scale(1.01);
+}
+
+p{
+    color: gray;
+}
+
+marquee{
+     height: 50px;
+    width: 620px;
+    background: linear-gradient(to right, rgba(73, 73, 73, 0.1), rgba(173, 173, 173, 0.1));
+    border-radius: 50px;
+    margin: 40px auto;
+    display: flex;
+    gap: 24px;
+    padding: 28px;
+    box-sizing: border-box;
+
+    /* add transition HERE (the default state) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 50px;
+    margin-top: -30px;
+    border: 0.5px solid rgb(75, 75, 75);
+    color: white;
+    font-family: sans-serif;
+    margin-left: 600px;
+    margin-top: -360px;
+}
+
+marquee:hover{
+    border-color: rgb(164, 187, 167);
+
+}
+
+.soc{
+     height: 240px;
+    width: 300px;
+    background: linear-gradient(to right, rgba(73, 73, 73, 0.1), rgba(173, 173, 173, 0.1));
+    border-radius: 50px;
+    margin: 40px auto;
+    display: flex;
+    gap: 24px;
+    padding: 28px;
+    box-sizing: border-box;
+
+    /* add transition HERE (the default state) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 0.5px solid rgb(75, 75, 75);
+    position: absolute;
+    top: 200px;
+    left: 600px;
+       color: white;
+    font-family: sans-serif;
+}
+.soci{
+     height: 240px;
+    width: 300px;
+    background: linear-gradient(to right, rgba(73, 73, 73, 0.1), rgba(173, 173, 173, 0.1));
+    border-radius: 50px;
+    margin: 40px auto;
+    display: flex;
+    gap: 24px;
+    padding: 28px;
+    box-sizing: border-box;
+
+    /* add transition HERE (the default state) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 0.5px solid rgb(75, 75, 75);
+    position: absolute;
+    top: 200px;
+    left: 920px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.soc:hover{
+    border-color: rgb(164, 187, 167);
+    transform: scale(1.05);
+
+}
+.soci:hover{
+    border-color: rgb(164, 187, 167);
+    transform: scale(1.05);
+
+}
+.social{
+    height: 200px;
+    position: absolute;
+    
+    top: 50px;
+}
+.ig{
+    height: 70px;
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    border-radius: 50px;
+}
+.yt{
+    height: 70px;
+     position: absolute;
+    top: 150px;
+    right: 90px;
+    border-radius: 50px
+}
+.yt:hover{
+    background-color: rgb(255, 255, 255);
+  color: rgb(41, 41, 41);
+  /* layered glow */
+  box-shadow:
+    0 0 8px 4px rgba(173,235,179,0.45),
+    0 0 20px 8px rgba(173,235,179,0.30),
+    0 0 48px 16px rgba(173,235,179,0.18),
+    0 6px 20px rgba(0,0,0,0.35);
+  transform: translateY(-2px);
+  transition: all 500ms ease;
+}
+
+.ig:hover{
+    background-color: rgb(255, 255, 255);
+  color: rgb(41, 41, 41);
+  /* layered glow */
+  box-shadow:
+    0 0 8px 4px rgba(173,235,179,0.45),
+    0 0 20px 8px rgba(173,235,179,0.30),
+    0 0 48px 16px rgba(173,235,179,0.18),
+    0 6px 20px rgba(0,0,0,0.35);
+  transform: translateY(-2px);
+  transition: all 500ms ease;
+}
+
+
+
+/* Mobile / tablet responsive tweaks */
+@media (max-width: 900px) {
+  header{
+    padding: 12px 16px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* place logo above everything and reduce size for mobile */
+  .logo{
+    position: static;
+    height: 80px; /* smaller than desktop 150px */
+    width: auto;
+    margin: 0;
+    z-index: 30;
+  }
+
+  /* nav becomes wrap-able, centered, touch-friendly */
+  .nav{
+    order: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 680px;
+    transform: none; /* remove desktop shifts */
+    padding: 6px 8px;
+    box-sizing: border-box;
+  }
+
+  .nav a{
+    padding: 8px 10px;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  /* CTA drops below header, larger tap target */
+  .cta{
+    order: 3;
+    position: static;
+    width: auto;
+    min-width: 140px;
+    height: 44px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    margin-top: 6px;
+  }
+
+  /* layout row stacks vertically */
+  .content-row{
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+    justify-content: center;
+    padding: 0 16px;
+  }
+
+  .aboutme{
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 18px;
+    height: auto;
+    transform: none;
+    border-radius: 24px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .dev{
+    width: 38%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+
+  .abt{
+    width: 62%;
+    padding: 0;
+  }
+
+  /* marquee becomes a compact band (or hide on very small screens) */
+  .marquee-wrap marquee{
+    width: 100%;
+    height: 80px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+
+  /* footer spacing adjustments */
+  footer{
+    padding: 20px 12px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 420px) {
+  .logo{ height: 64px; }
+  .nav a{ font-size: 15px; padding: 8px; }
+  .cta{ min-width: 120px; height: 44px; padding: 8px 12px; }
+  .dev{ width: 40%; max-width: 160px; }
+  .marquee-wrap marquee{ height: 70px; font-size: 14px; }
+  /* optional: hide marquee on very small screens for clarity */
+  /* .marquee-wrap{ display: none; } */
+}
+
+/* Improve touch & visual feedback */
+a, button {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  touch-action: manipulation;
+}
+
