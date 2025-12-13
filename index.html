@@ -126,3 +126,23 @@ document.addEventListener('mousemove', (e) => {
 });
 </script>
 
+<script>
+  // Debug helper: visually mark elements wider than the viewport on small screens
+  (function findOverflow(){
+    if (window.innerWidth > 600) return;
+    const offenders = [];
+    document.querySelectorAll('body *').forEach(el => {
+      if (!(el instanceof HTMLElement)) return;
+      const rect = el.getBoundingClientRect();
+      if (rect.width > window.innerWidth) {
+        offenders.push({selector: el.tagName.toLowerCase() + (el.id?('#'+el.id):'') + (el.className?('.'+el.className.replace(/\s+/g,'.')):''), width: Math.round(rect.width)});
+        el.style.outline = '2px solid rgba(255,0,0,0.5)';
+      }
+    });
+    if (offenders.length) {
+      console.warn('Detected elements wider than viewport:', offenders);
+      alert('Debug: some elements exceed the mobile width. Check the console for details.');
+    }
+  })();
+</script>
+
