@@ -1,6 +1,10 @@
 
     /* layout wrapper so nav stays centered while button sits top-right */
    html, body {
+/* Hide custom cursor for touch/no-hover devices globally */
+@media (hover: none) {
+  .cursor-follower { display: none !important; }
+}
   height: 100%;
 }
     header{
@@ -98,7 +102,7 @@
   margin-top: auto;
   padding: 20px 0;
   position: absolute;
-  top: 880px;
+  top: 1300px;
   width: 100%;
   text-align: center;
 }
@@ -123,7 +127,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(to right, rgb(15,15,15), rgb(22, 26, 22));
+  background: linear-gradient(to right,  rgb(25, 25, 25),rgb(12, 12, 12), rgb(21, 24, 21));
   margin: 0;
 }
 
@@ -221,7 +225,7 @@ marquee:hover{
 }
 .wtog:hover {
     border-color: rgb(164, 187, 167);
-    transform: scale(1.02);
+    
 }
 
 .soc{
@@ -267,12 +271,10 @@ marquee:hover{
 
 .soc:hover{
     border-color: rgb(164, 187, 167);
-    transform: scale(1.05);
-
+  
 }
 .soci:hover{
     border-color: rgb(164, 187, 167);
-    transform: scale(1.05);
 
 }
 .social{
@@ -304,7 +306,7 @@ marquee:hover{
     0 0 20px 8px rgba(173,235,179,0.30),
     0 0 48px 16px rgba(173,235,179,0.18),
     0 6px 20px rgba(0,0,0,0.35);
-  transform: translateY(-2px);
+  transform: translateY(-5px);
   transition: all 500ms ease;
 }
 
@@ -317,12 +319,12 @@ marquee:hover{
     0 0 20px 8px rgba(173,235,179,0.30),
     0 0 48px 16px rgba(173,235,179,0.18),
     0 6px 20px rgba(0,0,0,0.35);
-  transform: translateY(-2px);
+  transform: translateY(-5px);
   transition: all 500ms ease;
 }
 
   .pics {
-    height: 300px;
+    height: 320px;
     width: 900px;
     background: linear-gradient(to right, rgba(73, 73, 73, 0.1), rgba(173, 173, 173, 0.1));
     border-radius: 50px;
@@ -332,14 +334,14 @@ marquee:hover{
     padding: 28px;
     box-sizing: border-box;
     position: absolute;
-    top: 120px;
-    left: 200px;
+    top: 820px;
+    left: 50px;
 
     /* add transition HERE (the default state) */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
    
-    border: 0.5px solid rgb(75, 75, 75);
-    color: rgb(190, 190, 190);
+    border: 0.5px solid rgb(112, 112, 112);
+    color: rgb(134, 134, 134);
     font-family: sans-serif;
     
 }
@@ -499,444 +501,86 @@ a, button {
 
 
 @media (max-width: 480px) {
-  .header-nav {
-    /* Hide the horizontal menu and show a hamburger icon */
-    display: none; 
-    /* You would add CSS here for the hamburger icon itself */
+  /* Mobile-first layout: stack blocks, larger touch targets, tidy header */
+  html, body { height: 100%; }
+  body {
+    background-image: linear-gradient(to bottom, rgb(15,15,15), rgb(10,10,10)),
+                      repeating-radial-gradient(circle at 20% 40%, rgba(173,235,179,0.04) 0 2px, transparent 2px 20px);
+    background-blend-mode: overlay;
+    min-height: 100vh;
   }
 
-  .main-content {
-    /* Collapse the layout into a single vertical stack */
-    grid-template-columns: 1fr; 
-    grid-template-areas:
-      "content" 
-      "sidebar"; 
+  header { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px; }
+  .logo { position: static; height: 64px; margin: 0; }
+  .nav { position: static; width: 95%; max-width: 420px; display:flex; justify-content: space-between; gap:12px; padding: 8px 12px; height:auto; border-radius: 26px; overflow-x:auto; }
+  .nav a { padding: 10px 12px; font-size: 16px; }
+  .cta { position: static; margin: 8px 0; width: 120px; height: 44px; border-radius: 32px; }
+  footer { position: static; padding: 16px; margin-top: 24px; }
+
+  /* Stack main cards vertically and remove absolute positions */
+  .aboutme, .wtog, .soc, .soci, .pics, .green {
+    position: static !important;
+    width: calc(100% - 32px) !important;
+    margin: 14px auto !important;
+    padding: 18px !important;
+    height: auto;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    border-radius: 18px;
+    box-shadow: none;
+    border: 1px solid rgba(100,100,100,0.08);
   }
-  
- html, body {
-  height: 100%;
-}
-    header{
-      width: 100%;
-      padding: 20px 40px;
-      box-sizing: border-box;
-      position: relative;
-      display: flex;
-      justify-content: center; /* centers the nav */
-      align-items: flex-start;
-        min-height: 190px;
-    }
-    .logo{
-      position: absolute;
-      left: 20px;
-      top: -10px;
-      height: 150px; /* at least 150px high */
-      width: auto;
-      object-fit: contain;
-      display: block;
-      z-index: 20;
-    }
 
-    /* renamed nav div to .nav to avoid styling all divs */
-    .nav{
-      text-align: center;
-      margin: 0 auto;
-      border: 3px solid rgba(15, 15, 15,0);
-      border-radius: 40px;
-      height: 70px;
-      width: 400px;
-      color: rgb(108, 108, 108);
-      font-family: sans-serif;
-      font-weight: 300;
-      transition: all 500ms ease;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      background: transparent;
-    }
+  .dev { height: 140px; width: 140px; border-radius: 999px; margin: 0 auto; }
+  .work, .works { position: static; text-align: center; font-size: 28px; margin: 0; }
+  .butt { position: static; margin: 16px auto; width: 80%; max-width: 320px; height: 48px; }
+  .cta, .butt { border: 1px dotted rgba(173,235,179,0.12); }
+  .butt:hover { transform: scale(1.04); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+  .ill, .social { position: static; width: 90%; height: auto; margin: 10px auto; }
+  marquee { width: calc(100% - 32px); margin: 10px auto; padding: 12px; text-align:center; }
 
-    .nav:hover{
-      border: 3px solid rgb(221, 221, 221);
-      border-radius: 50px;
-     box-shadow:  0 0 8px 4px rgba(173,235,179,0.45),
-    0 0 20px 8px rgba(173,235,179,0.30),
-    0 0 48px 16px rgba(173,235,179,0.18),
-    0 6px 20px rgba(0,0,0,0.35);
-    }
+  /* Make links and buttons easier to tap */
+  a, button { font-size: 16px; padding: 12px 14px; }
 
-    a{
-      cursor: pointer;
-      transition: 500ms;
-      border-radius: 10px;
-      
-    }
-    a:hover{
-      color: rgb(173,235,179);  
-      background-color: rgb(43, 43, 43); 
-    }
+  /* Add subtle spotted/dotted visual style on mobile cards */
+  .aboutme, .wtog, .soc, .soci, .pics, .green {
+    background-image: repeating-radial-gradient(circle at 30% 10%, rgba(114,209,127,0.06) 0 3px, transparent 3px 22px), linear-gradient(180deg, rgba(20,20,20,0.55), rgba(10,10,10,0.45));
+    backdrop-filter: blur(6px);
+  }
 
-    /* button sits at the top-right of the header */
-    .cta{
-      position: absolute;
-      right: 60px;
-      top: 35px;
-      border: none;
-      background-color: rgb(41, 41, 41);
-      color: rgb(255, 255, 255);
-      height: 40px;
-      width: 100px;
-      border-radius: 40px;
-      cursor: pointer;
-      transition: 500ms;
-      z-index: 10;
-    }
-     a, a:link, a:visited {
-      color: rgb(108, 108, 108);
-      text-decoration: none;
-    }
-    a:hover, a:active {
-      color: rgb(173, 235, 179);
-      text-decoration: none;
-    }
-    a:focus {
-      outline: 3px solid rgba(173,235,179,0.25);
-      outline-offset: 4px;
-    }
-
-    footer{
-  text-align: center;
-  gap: 40px;
-  font-family: sans-serif;
-  margin-top: auto;
-  padding: 20px 0;
-  position: absolute;
-  top: 880px;
-  left: 460px;
-}
-  
-    .fut{
-      color: rgb(91, 91, 91);
-    }
-
-    .cta:hover{
-  background-color: rgb(255, 255, 255);
-  color: rgb(41, 41, 41);
-  /* layered glow */
-  box-shadow:
-    0 0 8px 4px rgba(173,235,179,0.45),
-    0 0 20px 8px rgba(173,235,179,0.30),
-    0 0 48px 16px rgba(173,235,179,0.18),
-    0 6px 20px rgba(0,0,0,0.35);
-  transform: translateY(-2px);
+  /* Hide the custom cursor follower for touch devices */
+  @media (hover: none) {
+    .cursor-follower { display: none; }
+  }
 }
 
-   body{
-  flex-direction: column;
-  background-color:  rgb(15,15,15);
-
-}
-
-    .abt{
-    color: white;
-    font-family: sans-serif;
-    /* no absolute positioning anymore */
-    align-self: center;
-}
-  
-  .dev{
-    height: 240px;
-    border-radius: 50px;
-    /* no absolute positioning anymore */
-    object-fit: cover;
-}
-
-    .aboutme {
-    height: 320px;
-    width: 520px;
-    background: linear-gradient(to right, rgba(73, 73, 73, 0.1), rgba(173, 173, 173, 0.1));
-    border-radius: 50px;
-    margin: 40px auto;
-    display: flex;
-    gap: 24px;
-    padding: 28px;
-    box-sizing: border-box;
-
-    /* add transition HERE (the default state) */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-left: 50px;
-    margin-top: -30px;
-    border: 0.5px solid rgb(75, 75, 75);
-}
-
-    .aboutme:hover {
-    border-color: rgb(164, 187, 167);
-
-    transform: scale(1.01);
-}
-
-p{
-    color: gray;
-}
-
-marquee{
-     height: 50px;
-    width: 620px;
-    background: linear-gradient(to right, rgba(73, 73, 73, 0.1), rgba(173, 173, 173, 0.1));
-    border-radius: 50px;
-    margin: 40px auto;
-    display: flex;
-    gap: 24px;
-    padding: 28px;
-    box-sizing: border-box;
-
-    /* add transition HERE (the default state) */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-left: 50px;
-    margin-top: -30px;
-    border: 0.5px solid rgb(75, 75, 75);
-    color: white;
-    font-family: sans-serif;
-    margin-left: 600px;
-    margin-top: -360px;
-}
-
-marquee:hover{
-    border-color: rgb(164, 187, 167);
-
-}
-
-
-.wtog {
-    height: 300px;
-    width: 1160px;
-    background: linear-gradient(to right, rgba(73, 73, 73, 0.1), rgba(173, 173, 173, 0.1));
-    border-radius: 50px;
-    margin: 40px auto;
-    display: flex;
-    gap: 24px;
-    padding: 28px;
-    box-sizing: border-box;
-    position: absolute;
-    top: 480px;
-    left: 50px;
-
-    /* add transition HERE (the default state) */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-   
-    border: 0.5px solid rgb(75, 75, 75);
-    color: rgb(190, 190, 190);
-    font-family: sans-serif;
+/* Hide the default cursor so the custom circle is the focus */
+/* --- Default Cursor Follower Styles (The Small Glowy Dot) --- */
+.cursor-follower {
+    height: 15px; 
+    width: 15px;  
+    background-color: #ffffff9e; 
+    border-radius: 50%; 
     
-}
-.wtog:hover {
-    border-color: rgb(164, 187, 167);
-    transform: scale(1.02);
-}
-
-.soc{
-     height: 240px;
-    width: 300px;
-    background: linear-gradient(to right, rgba(73, 73, 73, 0.1), rgba(173, 173, 173, 0.1));
-    border-radius: 50px;
-    margin: 40px auto;
-    display: flex;
-    gap: 24px;
-    padding: 28px;
-    box-sizing: border-box;
-
-    /* add transition HERE (the default state) */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 0.5px solid rgb(75, 75, 75);
-    position: absolute;
-    top: 200px;
-    left: 600px;
-       color: white;
-    font-family: sans-serif;
-}
-.soci{
-     height: 240px;
-    width: 300px;
-    background: linear-gradient(to right, rgba(73, 73, 73, 0.1), rgba(173, 173, 173, 0.1));
-    border-radius: 50px;
-    margin: 40px auto;
-    display: flex;
-    gap: 24px;
-    padding: 28px;
-    box-sizing: border-box;
-
-    /* add transition HERE (the default state) */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 0.5px solid rgb(75, 75, 75);
-    position: absolute;
-    top: 200px;
-    left: 920px;
-    color: white;
-    font-family: sans-serif;
-}
-
-.soc:hover{
-    border-color: rgb(164, 187, 167);
-    transform: scale(1.05);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    pointer-events: none; 
+    z-index: 9999; 
+    transition: transform 0.1s ease-out, all 0.2s ease-out; /* Smooth movement AND smooth change */
 
 }
-.soci:hover{
-    border-color: rgb(164, 187, 167);
-    transform: scale(1.05);
 
-}
-.social{
-    height: 200px;
-    position: absolute;
+/* --- Hover State Styles (The Big Ring) --- */
+.is-active {
+    height: 20px; /* Bigger size on hover */
+    width: 20px;  
+    background-color: transparent; /* Makes the center clear */
+    border: 2px solid #ffffffcd; /* Adds a visible ring */
     
-    top: 50px;
-}
-.ig{
-    height: 70px;
-    position: absolute;
-    top: 150px;
-    right: 20px;
-    border-radius: 50px;
-}
-.yt{
-    height: 70px;
-     position: absolute;
-    top: 150px;
-    right: 90px;
-    border-radius: 50px
-}
-.yt:hover{
-    background-color: rgb(255, 255, 255);
-  color: rgb(41, 41, 41);
-  /* layered glow */
-  box-shadow:
-    0 0 8px 4px rgba(173,235,179,0.45),
-    0 0 20px 8px rgba(173,235,179,0.30),
-    0 0 48px 16px rgba(173,235,179,0.18),
-    0 6px 20px rgba(0,0,0,0.35);
-  transform: translateY(-2px);
-  transition: all 500ms ease;
-}
-
-.ig:hover{
-    background-color: rgb(255, 255, 255);
-  color: rgb(41, 41, 41);
-  /* layered glow */
-  box-shadow:
-    0 0 8px 4px rgba(173,235,179,0.45),
-    0 0 20px 8px rgba(173,235,179,0.30),
-    0 0 48px 16px rgba(173,235,179,0.18),
-    0 6px 20px rgba(0,0,0,0.35);
-  transform: translateY(-2px);
-  transition: all 500ms ease;
-}
-
-  .pics {
-    height: 300px;
-    width: 900px;
-    background: linear-gradient(to right, rgba(73, 73, 73, 0.1), rgba(173, 173, 173, 0.1));
-    border-radius: 50px;
-    margin: 40px auto;
-    display: flex;
-    gap: 24px;
-    padding: 28px;
-    box-sizing: border-box;
-    position: absolute;
-    top: 120px;
-    left: 200px;
-
-    /* add transition HERE (the default state) */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-   
-    border: 0.5px solid rgb(75, 75, 75);
-    color: rgb(190, 190, 190);
-    font-family: sans-serif;
-    
-}
-
-    .pics:hover {
-    border-color: rgb(164, 187, 167);
-}
-
-
-
-
-
-/* Improve touch & visual feedback */
-a, button {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-  touch-action: manipulation;
-}
-
-.work{
-  font-family: sans-serif;
-  color: white;
-  position: absolute;
-  top: 10px;
-  right: 50px;
-  font-size: 60px;
-}
-
-.works{
-  font-family: sans-serif;
-  color: rgb(114, 209, 127);
-  position: absolute;
-  top: 70px;
-  right: 50px;
-  font-size: 60px;
-}
-
-.butt{
-  background-color: rgb(114, 209, 127);
-  font-weight: bold;
-  height: 50px;
-  width: 200px;
-  border-radius: 45px;
-  border: none;
-  position: absolute;
-  top: 200px;
-  left: 470px;
-}
-.butt:hover{
-  background-color: rgb(79, 114, 84);
-  color: white;
-  
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-  
-}
-
-.ill{
-  height: 350px;
-   position: absolute;
-  top: 10px;
-  left: 20px;
-}
-
-.green {
-    height: 240px;
-    width: 900px;
-    background-color: rgba(100, 204, 100,0.2);
-    border-radius: 50px;
-    margin: 40px auto;
-    display: flex;
-    gap: 24px;
-    padding: 28px;
-    box-sizing: border-box;
-    position: absolute;
-    top: 20px;
-    left: 0px;
-
-    /* add transition HERE (the default state) */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-   
-    border: 0.5px solid rgb(75, 75, 75);
-    color: rgb(190, 190, 190);
-    font-family: sans-serif;
-    
-}
-
-
-
- 
+    /* Bigger, brighter glow on hover */
+    box-shadow: 
+        0 0 10px 3px #7fcd9292, 
+        0 0 25px 8px #fcf6bd78; 
 }
