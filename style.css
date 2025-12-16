@@ -31,7 +31,7 @@
       border: 3px solid rgba(15, 15, 15,0);
       border-radius: 40px;
       height: 70px;
-      width: 400px;
+      width: 450px;
       color: rgb(108, 108, 108);
       font-family: sans-serif;
       font-weight: 300;
@@ -102,6 +102,7 @@
   width: 100%;
   text-align: center;
 }
+
   
     .fut{
       color: rgb(91, 91, 91);
@@ -474,7 +475,7 @@ a, button {
 
 
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   /* Mobile-first layout: stack blocks, larger touch targets, tidy header */
   html, body { height: 100%; }
   body {
@@ -599,4 +600,50 @@ a, button {
     transform: translateX(0);
     opacity: 1;
   }
+}
+.marq{
+  position: relative;
+  top: -25px;
+}
+
+.blog1{
+        color: white;
+        width: 900px;
+    
+    background: linear-gradient(to right, rgba(173, 173, 173, 0.05), rgba(73, 73, 73, 0.05));
+    border-radius: 50px;
+    margin: 40px auto;
+    display: flex;
+    gap: 24px;
+    padding: 28px;
+    box-sizing: border-box;
+
+    /* add transition HERE (the default state) */
+    transition: transform 0.3s ease;
+    border: 0.5px solid rgb(75, 75, 75);
+    position: relative;
+    top: -70px;
+    font-family: sans-serif;
+    animation: 1s ease-out 0s 1 forwards scaleUpFade;
+}
+
+.form{
+  color: white;
+  font-family: sans-serif;
+}
+
+.submit{
+  height: 50px;
+   width: 830px; 
+   color: rgb(0, 0, 0);
+   font-family: sans-serif;
+   background-color: lightgreen;
+   border-radius: 15px;
+   border: none;
+   transition: 500ms;
+}
+
+.submit:hover{
+  color: white;
+  background-color: rgb(37, 54, 37);
 }
