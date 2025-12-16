@@ -6,42 +6,94 @@
   <title>Home - VisheshCreates.</title>
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet"  href="style.css">
+  
 
 </head>
 
- <header>
+<body>
+
+  <header>
   <img class="logo" src="logo.png" alt="logo">
-    <div class="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="uc.html">Works</a>
-      <a href="https://wa.me/919054349785">Contact</a>
+    <div class="nav link-hover">
+      <a href="index.html" class="link-hover">Home</a>
+      <a href="about.html" class="link-hover">About</a>
+      <a href="uc.html" class="link-hover">Works</a>
+      <a href="blogs.html" class="link-hover">Blogs</a>
+      <a href="contact.html" class="link-hover">Contact</a>
     </div>
 
-    <button class="cta" onclick="window.location.href='https://wa.me/919054349785'">Let's talk</button>
+<section class="link-hover">
+  <button class="cta link-hover" onclick="window.location.href='contact.html'">Let's talk</button></section>
   </header>
 
-<h2 style="font-family: sans-serif; color: rgb(197, 197, 197); text-align: center; position: absolute; top: 170px; left: 600px">About me</h2>
 
-<div class="pics">
-  <img src="dev3.jpeg" class="dev"><br>
-  
- <br><br>
-Hello there! I'm currently a student, but my real classroom is the digital world.
+<h1 style="text-align: center; color: white; font-family: sans-serif; position: relative; top: -50px;">About</h1>
 
-I'm deeply passionate about bringing ideas to life, whether it's through pixel-perfect website design and creation or compelling photo and video content creation.
 
-My focus is on blending technical skill with creative vision. This page is simply here to share my journey, showcase the projects I'm working on, and explore the endless possibilities that come with digital creativity.
+<div class="blog1">
+    <p>
+  Hello! I’m <b>Vishesh</b>, and while my journey began in the classroom, my real passion thrives in the digital world. As a <b>first-year student</b>, I view the web as more than just code—it is an ever-evolving canvas where technical logic meets artistic intuition. I am deeply committed to mastering the art of <b>website design and development</b>, constantly staying at the forefront of the latest <b>industry news</b> and emerging technologies. From the shift toward <b>immersive 3D environments</b> to the importance of <b>human-centric UX</b>, I am obsessed with understanding how modern tools can turn a static idea into a living, breathing digital experience.
+</p>
 
-I believe that every project, big or small, deserves a unique spark—and I'm here to find it.
+<p>
+  My creative process is built on the belief that every project deserves a <b>"unique spark."</b> Whether I am refining <b>pixel-perfect layouts</b>, writing clean and scalable code, or producing <b>high-impact photo and video content</b>, my goal is to blend <b>technical skill</b> with a sharp <b>creative vision</b>. I don't just want to build websites that function; I want to create digital spaces that tell a story and leave a lasting impression. By keeping my finger on the pulse of <b>2025’s design trends</b>, I ensure that my work is not only modern but future-proof.
+</p>
+
+<p>
+  This portfolio is a window into my growth and a gallery of my latest experiments. It’s a place where I document my journey from a curious student to a <b>professional creator</b>, showcasing the projects that challenge me to think differently. I am constantly exploring the endless possibilities of <b>digital creativity</b>, and I’m always looking for that next opportunity to push the boundaries of what a web experience can be. Every <b>line of code</b> and every <b>frame of video</b> is a step forward, and I’m excited to share that evolution with you.
+</p>
+
+</div>
+
+<h1 style="color: white; font-family: sans-serif; position: relative; text-align: center;">My Skills</h1>
+
+<div class="flex">
+<div class="tiltcard" data-tilt >
+<div class="iconht"><h1>HTML</h1></div>
+<div class="mstex"><p>I focus on clean, semantic HTML to build accessible and SEO-friendly
+   foundations. I believe a great user experience starts with a solid structure.</p></div>
+</div>
+
+<div class="tiltcard" data-tilt > 
+<div class="iconcs"><h1>CSS</h1></div>
+<div class="mstex"><p>I focus on clean, semantic HTML to build accessible and SEO-friendly
+   foundations. I believe a great user experience starts with a solid structure.</p></div>
+</div>
+
+<div class="tiltcard" data-tilt >
+<div class="iconjs"><h1>JS</h1></div>
+<div class="mstex"><p>I focus on clean, semantic HTML to build accessible and SEO-friendly
+   foundations. I believe a great user experience starts with a solid structure.</p></div>
+</div>
+
 </div>
 
 
-  <footer>
-    <a href="index.html">Home &nbsp;</a>
-      <a href="uc.html">About&nbsp;</a>
-      <a href="uc.html">Works&nbsp;</a>
-      <a href="https://wa.me/919054349785">Contact&nbsp;</a>
 
+
+  
+<div class="cursor-follower"></div>
+  <footer style="position: relative; top: -50px;">
+    <a href="index.html" class="link-hover">Home</a>
+      <a href="about.html" class="link-hover">About</a>
+      <a href="uc.html" class="link-hover">Works</a>
+      <a href="blogs.html" class="link-hover">Blogs</a>
+      <a href="contact.html" class="link-hover">Contact</a>
+ <p class="fut">Email me at  <b>visheshsingh29537@gmail.com</b></p>
       <p class="fut">All rights reserved by <b style="color: rgb(180, 180, 180);">Vishesh K. Singh</b>  &copy;</p>
+      
   </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script src="vanilla-tilt.js"></script>
+  <script>
+    console.log('vanilla-tilt: data-tilt count =', document.querySelectorAll('[data-tilt]').length);
+    document.querySelectorAll('[data-tilt]').forEach((el, i) => {
+      console.log('tilt element', i, el, 'vanillaTilt property:', el.vanillaTilt);
+      if (!el.vanillaTilt) el.classList.add('tilt-not-init');
+    });
+  </script>
+</body>
+</html>

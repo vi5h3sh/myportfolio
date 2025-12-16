@@ -93,7 +93,7 @@
 
     footer{
   text-align: center;
-  gap: 40px;
+  gap: 100px;
   font-family: sans-serif;
   margin-top: auto;
   padding: 20px 0;
@@ -414,6 +414,8 @@ marquee:hover{
 
     .pics:hover {
     border-color: rgb(164, 187, 167);
+    transform: scale(1.1);
+
 }
 
 
@@ -647,3 +649,71 @@ a, button {
   color: white;
   background-color: rgb(37, 54, 37);
 }
+
+:root {
+  --rx: 0deg;
+  --ry: 0deg;
+}
+
+.tiltcard{
+    color: white;
+        width: 300px;
+        height: 350px;
+    
+    background-color: rgb(30, 30, 30);
+    border-radius: 30px;
+    margin: 40px auto;
+    display: flex;
+    gap: 24px;
+    padding: 28px;
+    box-sizing: border-box;
+
+    /* add transition HERE (the default state) */
+    border: 0.5px solid rgb(75, 75, 75);
+    position: relative;
+    font-family: sans-serif;
+    justify-content: center;
+
+
+}
+
+.flex{
+  display: flex;
+  padding: 100px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -100px;
+}
+
+.iconht{
+  height: 150px;
+  width: 250px;
+  background-color: rgb(252, 151, 0);
+  border-radius: 15px;
+   text-align: center;
+    align-items: center;
+    color: black;
+}
+.iconcs{
+  height: 150px;
+  width: 250px;
+  background-color: rgb(0, 139, 252);
+  border-radius: 15px;
+   text-align: center;
+    align-items: center;color: black;
+}
+
+.iconjs{
+  height: 150px;
+  width: 250px;
+  background-color: rgb(252, 218, 0);
+  border-radius: 15px;
+  text-align: center;
+   align-items: center;color: black;
+}
+
+.mstex{
+  width: 250px;
+}
+
